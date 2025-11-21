@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portofolio Profesional — Nama Anda</title>
+
+<!-- TailwindCSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<!-- tsParticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; transition: background 0.5s; }
+
+  /* Glass + neon glow */
+  .glass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0,255,255,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.6);
+  }
+
+  /* Buttons neon glow */
+  .neon-btn {
+    border: 1px solid cyan;
+    box-shadow: 0 0 10px cyan;
+    transition: all 0.3s;
+  }
+  .neon-btn:hover { box-shadow: 0 0 20px cyan; }
+
+  /* Project hover glow */
+  .project-card:hover { box-shadow: 0 0 20px #00ffff; }
+
+  /* Particles */
+  #particles-js { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
+
+  /* Theme */
+  [data-theme="light"] { --bg-color: #f8fafc; --text-color: #1f2937; }
+  [data-theme="dark"] { --bg-color: #0f172a; --text-color: #f8fafc; }
+  body { background-color: var(--bg-color); color: var(--text-color); }
+
+  .active-link { font-weight: bold; text-decoration: underline; }
+</style>
+
+<script>
+  const toggleDarkMode = () => {
+    document.documentElement.setAttribute('data-theme', 
+      document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Navbar scroll spy
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => { if(window.scrollY >= sec.offsetTop-200) current = sec.id });
+      navLinks.forEach(link => link.classList.remove("active-link"));
+      document.querySelectorAll(`.nav-link[href="#${current}"]`).forEach(l => l.classList.add("active-link"));
+    });
+
+    // tsParticles
+    tsParticles.load("particles-js", {
+      background: { color: { value: "var(--bg-color)" } },
+      fpsLimit: 60,
+      interactivity: { events: { onHover: { enable: true, mode: "repulse" }, resize: true } },
+      particles: {
+        color: { value: ["#00ffff","#00ff99","#00ccff"] },
+        links: { enable: true, distance: 150, color: "#00ffff", opacity: 0.3, width: 1 },
+        collisions: { enable: true },
+        move: { enable: true, speed: 2, outModes: "bounce" },
+        number: { value: 80 },
+        opacity: { value: 0.5 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 4 } }
+      },
+      detectRetina: true
+    });
+  });
+</script>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 bg-white/50 dark:bg-black/50 backdrop-blur-md shadow-md">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-8 py-4">
+    <h1 class="text-xl font-bold">Nama Anda</h1>
+    <div class="hidden md:flex gap-6 font-medium">
+      <a href="#hero" class="nav-link hover:underline">Home</a>
+      <a href="#skills" class="nav-link hover:underline">Skills</a>
+      <a href="#education" class="nav-link hover:underline">Pendidikan</a>
+      <a href="#portfolio" class="nav-link hover:underline">Portfolio</a>
+      <a href="#contact" class="nav-link hover:underline">Kontak</a>
+    </div>
+    <div class="flex gap-2">
+      <button onclick="toggleDarkMode()" class="px-4 py-2 border rounded-lg">🌙 / ☀️</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="px-8 py-20 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+  <div class="max-w-xl" data-aos="fade-right">
+    <h2 class="text-4xl font-bold leading-tight">Halo, Saya <span class="text-blue-600 dark:text-green-500">Nama Anda</span></h2>
+    <p class="mt-4 text-lg opacity-80">Fullstack Developer Profesional</p>
+    <a href="cv.pdf" download class="mt-6 inline-block px-6 py-3 neon-btn rounded-lg">📄 Download CV</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="w-72 md:w-80 rounded-2xl shadow-xl hover:scale-105 transition" data-aos="fade-left"/>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="px-8 py-14 max-w-6xl mx-auto" data-aos="fade-up">
+  <h2 class="text-3xl font-semibold mb-7">Skills — Programming Languages</h2>
+  <div class="glass-card p-6 shadow-lg overflow-auto">
+    <table class="w-full text-left">
+      <thead>
+        <tr class="border-b border-gray-300/30">
+          <th class="pb-2">Logo</th><th class="pb-2">Bahasa</th><th class="pb-2">Level</th><th class="pb-2">Pengalaman</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-gray-300/30"><td><img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" class="w-8"></td><td>HTML/CSS</td><td>Expert</td><td>5 Tahun</td></tr>
+        <tr class="border-b border-gray-300/30"><td><img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" class="w-8"></td><td>JS</td><td>Advanced</td><td>4 Tahun</td></tr>
+        <tr><td><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></td><td>Python</td><td>Intermediate</td><td>3 Tahun</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="px-8 py-14 max-w-6xl mx-auto" data-aos="fade-up">
+  <h2 class="text-3xl font-semibold mb-4">Pendidikan Terakhir</h2>
+  <div class="glass-card p-6 shadow-lg">
+    <h3 class="text-xl font-bold">Universitas Contoh — Teknik Informatika</h3>
+    <p class="mt-1">Lulus: 2023</p>
+  </div>
+</section>
+
+<!-- WORK ADVENTURE -->
+<section id="adventure" class="px-8 py-14 max-w-6xl mx-auto" data-aos="fade-up">
+  <h2 class="text-3xl font-semibold mb-4">Petualangan Kerja</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="glass-card p-4 hover:shadow-cyan-400/50 transition"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="rounded-lg mb-2">Project Futuristik</div>
+    <div class="glass-card p-4 hover:shadow-cyan-400/50 transition"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="rounded-lg mb-2">Team Collaboration</div>
+    <div class="glass-card p-4 hover:shadow-cyan-400/50 transition"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="rounded-lg mb-2">Innovation Hackathon</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO SLIDER -->
+<section id="portfolio" class="px-8 py-14 max-w-6xl mx-auto" data-aos="fade-up">
+  <h2 class="text-3xl font-semibold mb-8">Portfolio Project</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide glass-card p-5 hover:shadow-cyan-400/50 transition">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="rounded-lg mb-4">
+        <h3 class="text-xl font-bold">Project 1</h3>
+        <div class="flex gap-2 mt-2">
+          <img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" class="w-6 h-6">
+          <img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" class="w-6 h-6">
+        </div>
+      </div>
+      <div class="swiper-slide glass-card p-5 hover:shadow-cyan-400/50 transition">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="rounded-lg mb-4">
+        <h3 class="text-xl font-bold">Project 2</h3>
+        <div class="flex gap-2 mt-2">
+          <img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-6 h-6">
+          <img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" class="w-6 h-6">
+        </div>
+      </div>
+      <div class="swiper-slide glass-card p-5 hover:shadow-cyan-400/50 transition">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="rounded-lg mb-4">
+        <h3 class="text-xl font-bold">Project 3</h3>
+        <div class="flex gap-2 mt-2">
+          <img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-6 h-6">
+          <img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" class="w-6 h-6">
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next text-black dark:text-white"></div>
+    <div class="swiper-button-prev text-black dark:text-white"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="px-8 py-14 max-w-6xl mx-auto" data-aos="fade-up">
+  <h2 class="text-3xl font-semibold mb-6">Kontak Saya</h2>
+  <div class="glass-card p-6">
+    <form class="grid md:grid-cols-2 gap-6">
+      <input type="text" placeholder="Nama" class="p-3 rounded-lg border border-gray-300/30 bg-white/10">
+      <input type="email" placeholder="Email" class="p-3 rounded-lg border border-gray-300/30 bg-white/10">
+      <textarea rows="4" placeholder="Pesan" class="md:col-span-2 p-3 rounded-lg border border-gray-300/30 bg-white/10"></textarea>
+      <div class="md:col-span-2 flex gap-4">
+        <a href="https://wa.me/62800000000" target="_blank" class="px-6 py-3 neon-btn rounded-lg">WhatsApp</a>
+        <button class="px-6 py-3 neon-btn rounded-lg">Kirim Email</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white/20 dark:bg-black/40 text-gray-800 dark:text-gray-200 py-6 mt-10 backdrop-blur">
+  <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p>© 2025 Nama Anda — All Rights Reserved.</p>
+    <div class="flex gap-4 text-xl">
+      <a href="#" class="hover:underline">🌐</a>
+      <a href="https://github.com/syahrilramadhan775" class="hover:underline">🐱</a>
+      <a href="#" class="hover:underline">💼</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  AOS.init({ duration: 1200, once: true });
+
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: { delay: 3000 },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 768:{slidesPerView:2},1024:{slidesPerView:3} }
+  });
+</script>
+
+</body>
+</html>
