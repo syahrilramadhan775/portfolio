@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofolio Profesional — Nama Anda</title>
+<title>Portofolio — Syahril Ramadhan</title>
+
+<!-- Line Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
 
 <!-- TailwindCSS -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -101,9 +104,9 @@
 <!-- NAVBAR -->
 <nav class="sticky top-0 z-50 bg-white/50 dark:bg-black/50 backdrop-blur-md shadow-md">
   <div class="max-w-6xl mx-auto flex justify-between items-center px-8 py-4">
-    <h1 class="text-xl font-bold">Nama Anda</h1>
+    <h1 class="text-xl font-bold"><a href="#hero">Syahril Ramadhan</a></h1>
     <div class="hidden md:flex gap-6 font-medium">
-      <a href="#hero" class="nav-link hover:underline">Home</a>
+      <!-- <a href="#hero" class="nav-link hover:underline">Home</a> -->
       <a href="#skills" class="nav-link hover:underline">Skills</a>
       <a href="#education" class="nav-link hover:underline">Pendidikan</a>
       <a href="#portfolio" class="nav-link hover:underline">Portfolio</a>
@@ -118,8 +121,8 @@
 <!-- HERO -->
 <section id="hero" class="px-8 py-20 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
   <div class="max-w-xl" data-aos="fade-right">
-    <h2 class="text-4xl font-bold leading-tight">Halo, Saya <span class="text-blue-600 dark:text-green-500">Nama Anda</span></h2>
-    <p class="mt-4 text-lg opacity-80">Fullstack Developer Profesional</p>
+    <h2 class="text-4xl font-bold leading-tight">Halo, Saya <span class="text-blue-600 dark:text-green-500">Syahril Ramadhan</span></h2>
+    <p class="mt-4 text-lg opacity-80">Software Development || Backend Developer</p>
     <a href="cv.pdf" download class="mt-6 inline-block px-6 py-3 neon-btn rounded-lg">📄 Download CV</a>
   </div>
   <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" class="w-72 md:w-80 rounded-2xl shadow-xl hover:scale-105 transition" data-aos="fade-left"/>
@@ -127,22 +130,69 @@
 
 <!-- SKILLS -->
 <section id="skills" class="px-8 py-14 max-w-6xl mx-auto" data-aos="fade-up">
-  <h2 class="text-3xl font-semibold mb-7">Skills — Programming Languages</h2>
+  <h2 class="text-3xl font-semibold mb-7">Skills</h2>
+
   <div class="glass-card p-6 shadow-lg overflow-auto">
     <table class="w-full text-left">
       <thead>
         <tr class="border-b border-gray-300/30">
-          <th class="pb-2">Logo</th><th class="pb-2">Bahasa</th><th class="pb-2">Level</th><th class="pb-2">Pengalaman</th>
+          <th class="pb-2" style="text-align: center;">Logo</th>
+          <th class="pb-2" style="text-align: center;">Level</th>
+          <th class="pb-2" style="text-align: center;">Logo</th>
+          <th class="pb-2" style="text-align: center;">Level</th>
         </tr>
       </thead>
+
       <tbody>
-        <tr class="border-b border-gray-300/30"><td><img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" class="w-8"></td><td>HTML/CSS</td><td>Expert</td><td>5 Tahun</td></tr>
-        <tr class="border-b border-gray-300/30"><td><img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" class="w-8"></td><td>JS</td><td>Advanced</td><td>4 Tahun</td></tr>
-        <tr><td><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></td><td>Python</td><td>Intermediate</td><td>3 Tahun</td></tr>
+        <!-- Baris 1 -->
+        <tr class="border-b border-gray-300/30">
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" class="w-8"></center></td>
+          <td style="text-align: center;">Expert</td>
+
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" class="w-8"></center></td>
+          <td style="text-align: center;">Advanced</td>
+        </tr>
+
+        <!-- Baris 2 -->
+        <tr class="border-b border-gray-300/30">
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></center></td>
+          <td style="text-align: center;">Intermediate</td>
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></center></td>
+          <td style="text-align: center;">Intermediate</td>
+
+          <!-- Kosong jika jumlah item ganjil -->
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- Baris 3 -->
+        <tr class="border-b border-gray-300/30">
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></center></td>
+          <td style="text-align: center;">Intermediate</td>
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></center></td>
+          <td style="text-align: center;">Intermediate</td>
+
+          <!-- Kosong jika jumlah item ganjil -->
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- Baris 4 -->
+        <tr class="border-b border-gray-300/30">
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></center></td>
+          <td style="text-align: center;">Intermediate</td>
+          <td><center><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" class="w-8"></center></td>
+          <td style="text-align: center;">Intermediate</td>
+
+          <!-- Kosong jika jumlah item ganjil -->
+          <td></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
   </div>
 </section>
+
 
 <!-- EDUCATION -->
 <section id="education" class="px-8 py-14 max-w-6xl mx-auto" data-aos="fade-up">
@@ -208,7 +258,7 @@
       <input type="email" placeholder="Email" class="p-3 rounded-lg border border-gray-300/30 bg-white/10">
       <textarea rows="4" placeholder="Pesan" class="md:col-span-2 p-3 rounded-lg border border-gray-300/30 bg-white/10"></textarea>
       <div class="md:col-span-2 flex gap-4">
-        <a href="https://wa.me/62800000000" target="_blank" class="px-6 py-3 neon-btn rounded-lg">WhatsApp</a>
+        <a href="https://wa.me/6281310802774" target="_blank" class="px-6 py-3 neon-btn rounded-lg">WhatsApp</a>
         <button class="px-6 py-3 neon-btn rounded-lg">Kirim Email</button>
       </div>
     </form>
@@ -216,16 +266,28 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-white/20 dark:bg-black/40 text-gray-800 dark:text-gray-200 py-6 mt-10 backdrop-blur">
+<!-- <footer class="bg-white/20 dark:bg-black/40 text-gray-800 dark:text-gray-200 py-6 mt-10 backdrop-blur">
   <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-    <p>© 2025 Nama Anda — All Rights Reserved.</p>
+    <p>© 2025 Syahril Ramadhan — All Rights Reserved.</p>
     <div class="flex gap-4 text-xl">
       <a href="#" class="hover:underline">🌐</a>
       <a href="https://github.com/syahrilramadhan775" class="hover:underline">🐱</a>
       <a href="#" class="hover:underline">💼</a>
     </div>
   </div>
+</footer> -->
+<!-- FOOTER -->
+<footer class="bg-white/20 dark:bg-black/40 text-gray-800 dark:text-gray-200 py-6 mt-10 backdrop-blur">
+  <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p>© 2025 Syahril Ramadhan — All Rights Reserved.</p>
+    <div class="flex gap-4 text-xl">
+      <a href="#" class="hover:underline"><i class="la la-linkedin"></i></a>
+      <a href="https://github.com/syahrilramadhan775" class="hover:underline"><i class="la la-github"></i></a>
+      <a href="#" class="hover:underline"><i class="la la-briefcase"></i></a>
+    </div>
+  </div>
 </footer>
+
 
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
