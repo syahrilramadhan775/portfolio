@@ -255,36 +255,26 @@
   <h2 class="text-3xl font-semibold mb-6">Kontak Saya</h2>
   <div class="glass-card p-6">
     <form class="grid md:grid-cols-2 gap-6">
-      <input type="text" placeholder="Nama" class="p-3 rounded-lg border border-gray-300/30 bg-white/10">
+      <input id="name" type="text" placeholder="Name" class="p-3 rounded-lg border border-gray-300/30 bg-white/10">
       <input type="email" placeholder="Email" class="p-3 rounded-lg border border-gray-300/30 bg-white/10">
-      <textarea rows="4" placeholder="Pesan" class="md:col-span-2 p-3 rounded-lg border border-gray-300/30 bg-white/10"></textarea>
+      <textarea id="message" rows="4" placeholder="Message" class="md:col-span-2 p-3 rounded-lg border border-gray-300/30 bg-white/10"></textarea>
       <div class="md:col-span-2 flex gap-4">
-        <a href="https://wa.me/6281310802774/?text=Halo Saya Ingin Berkenalan" target="_blank" class="px-6 py-3 neon-btn rounded-lg">WhatsApp</a>
-        <button class="px-6 py-3 neon-btn rounded-lg">Kirim Email</button>
+        <!-- <a href="https://wa.me/6281310802774/?text=Halo Saya Ingin Berkenalan" target="_blank" class="px-6 py-3 neon-btn rounded-lg">WhatsApp</a> -->
+        <button class="px-6 py-3 neon-btn rounded-lg" onclick="kirimWA()">Send <i class="la la-whatsapp la-lg"></i></button>
+        <button class="px-6 py-3 neon-btn rounded-lg">Send To Email</button>
       </div>
     </form>
   </div>
 </section>
 
 <!-- FOOTER -->
-<!-- <footer class="bg-white/20 dark:bg-black/40 text-gray-800 dark:text-gray-200 py-6 mt-10 backdrop-blur">
-  <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-    <p>© 2025 Syahril Ramadhan — All Rights Reserved.</p>
-    <div class="flex gap-4 text-xl">
-      <a href="#" class="hover:underline">🌐</a>
-      <a href="https://github.com/syahrilramadhan775" class="hover:underline">🐱</a>
-      <a href="#" class="hover:underline">💼</a>
-    </div>
-  </div>
-</footer> -->
-<!-- FOOTER -->
 <footer class="bg-white/20 dark:bg-black/40 text-gray-800 dark:text-gray-200 py-6 mt-10 backdrop-blur">
   <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
     <p>© 2025 Syahril Ramadhan — All Rights Reserved.</p>
     <div class="flex gap-4 text-xl">
-      <a href="#" class="hover:underline"><i class="la la-linkedin"></i></a>
-      <a href="https://github.com/syahrilramadhan775" class="hover:underline"><i class="la la-github"></i></a>
-      <a href="#" class="hover:underline"><i class="la la-briefcase"></i></a>
+      <a href="#" class="hover:underline"><i class="la la-linkedin la-lg"></i></a>
+      <a href="https://github.com/syahrilramadhan775" class="hover:underline"><i class="la la-github la-lg"></i></a>
+      <a href="#" class="hover:underline"><i class="la la-briefcase la-lg"></i></a>
     </div>
   </div>
 </footer>
@@ -305,6 +295,18 @@
     navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
     breakpoints: { 768:{slidesPerView:2},1024:{slidesPerView:3} }
   });
+</script>
+
+<script>
+  function kirimWA() {
+      const nama = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      const pesan = `Halo, nama saya ${nama}, ${message}`;
+      const urlWA = "https://wa.me/6281310802774/?text=" + encodeURIComponent(pesan);
+
+      window.open(urlWA, "_blank");
+  }
 </script>
 
 </body>
