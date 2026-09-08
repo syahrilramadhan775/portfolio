@@ -51,3 +51,15 @@ document.querySelectorAll('[data-slider]').forEach((slider) => {
 
   update();
 });
+
+// ---- Project "Lihat detail" expand/collapse ----
+document.querySelectorAll('[data-toggle-desc]').forEach((btn) => {
+  const desc = btn.closest('.project-info').querySelector('.project-desc');
+  if (!desc) return;
+
+  btn.addEventListener('click', () => {
+    const expanded = desc.classList.toggle('is-expanded');
+    btn.textContent = expanded ? 'Sembunyikan ↑' : 'Lihat detail →';
+    btn.setAttribute('aria-expanded', String(expanded));
+  });
+});
